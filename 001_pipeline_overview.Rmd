@@ -43,7 +43,7 @@ __Explanation:__ First, we visually examine our sequencing results. `FastQC` gen
 
 __Code:__ [fastqc_multiqc_raw.sh](scripts/fastqc_multiqc_raw_slurm.sh)
 
-__Results:__ See `MultiQC` report [here.](results/multiqc/raw/multiqc_report.html)
+__Results:__ See `MultiQC` report [here.](results_github/multiqc_report_raw.html)
 
 # Step 2: trim low-quality reads, repeat QC
 
@@ -55,7 +55,7 @@ Note: if you want to do transcriptome assembly, you *should* trim reads for both
 
 __Code:__ [trimgalore.sh](scripts/trimgalore_slurm.sh)
 
-__Results:__ See `MultiQC` report [here.](results/multiqc/trimmed/multiqc_report.html)
+__Results:__ See `MultiQC` report [here.](results_github/multiqc_report_trimmed.html)
 
 Following trimming, read quality is marginally improved.
 
@@ -69,7 +69,7 @@ __Code:__ [starquant_slurm_etheo.sh](scripts/starquant_slurm_etheo.sh)
 
 __Results:__ Running `STAR` in quantification mode outputs a number of *ReadsPerGene.out.tab files. These output files have a row for each gene and four columns: gene ID, counts for unstranded RNA-seq, counts for 1st strand aligned to RNA, counts for 2nd strand aligned. I believe Chris did an unstranded library prep. Thus, we can extract the second column from each file and create a counts matrix.
 
-This [counts matrix](results/star_raw/readcounts_raw.txt) can then be imported into `DESeq2.`
+This [counts matrix](results_github/ecrag_readcounts_raw.txt) can then be imported into `DESeq2.`
 
 __Note: the % uniquely mapped reads for each sample is on the low side (~60-70%). Typically we shoot for 70-90%.__
 

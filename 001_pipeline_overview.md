@@ -41,7 +41,7 @@ files at once.
 **Code:** [fastqc\_multiqc\_raw.sh](scripts/fastqc_multiqc_raw_slurm.sh)
 
 **Results:** See `MultiQC` report
-[here.](results/multiqc/raw/multiqc_report.html)
+[here.](results_github/multiqc_report_raw.html)
 
 # Step 2: trim low-quality reads, repeat QC
 
@@ -59,7 +59,7 @@ for both quality and adapter content.
 **Code:** [trimgalore.sh](scripts/trimgalore_slurm.sh)
 
 **Results:** See `MultiQC` report
-[here.](results/multiqc/trimmed/multiqc_report.html)
+[here.](results_github/multiqc_report_trimmed.html)
 
 Following trimming, read quality is marginally improved.
 
@@ -83,8 +83,8 @@ for 1st strand aligned to RNA, counts for 2nd strand aligned. I believe
 Chris did an unstranded library prep. Thus, we can extract the second
 column from each file and create a counts matrix.
 
-This [counts matrix](results/star_raw/readcounts_raw.txt) can then be
-imported into `DESeq2.`
+This [counts matrix](results_github/ecrag_readcounts_raw.txt) can then
+be imported into `DESeq2.`
 
 **Note: the % uniquely mapped reads for each sample is on the low side
 (\~60-70%). Typically we shoot for 70-90%.**
